@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МАРКЕТ-98 :: Винтажный онлайн-магазин</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="win98-desktop">
+    <!-- Рабочий стол Windows 98 -->
+    <div class="desktop-icons">
+      <div class="icon">
+        <img src="img/my_computer.png" alt="" />
+      </div>
+      <div class="icon">
+        <img src="img/IE.png" alt="" />
+      </div>
+    </div>
+
+    <!-- Окно магазина -->
+    <div class="window win98-window">
+      <div class="title-bar">
+        <span class="title-text"
+          >Microsoft Internet Explorer МАРКЕТ-98 -
+          <span class="title-icon">🛒</span> Винтажный магазин</span
+        >
+        <div class="window-controls">
+          <button class="minimize">—</button>
+          <button class="maximize">□</button>
+          <button class="close">X</button>
+        </div>
+      </div>
+
+      <div class="window-content">
+        <div class="win98-toolbar">
+          <button class="win98-button">Главная</button>
+          <button class="win98-button">Каталог</button>
+          <button class="win98-button">Корзина</button>
+        </div>
+
+        <div class="win98-content">
+          <h1>Добро пожаловать в МАРКЕТ-98!</h1>
+          <p>Ваш лучший источник ностальгии по 2000-м</p>
+
+          <!-- Товары будут добавляться через JS -->
+          <div id="products-grid" class="win98-products-grid"></div>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <span>Готово</span>
+        <span class="status-icon">📶</span>
+      </div>
+    </div>
+
+    <!-- Панель задач -->
+    <div class="taskbar">
+      <button class="start-button">
+        <img src="img/Start.png" alt="Start" />
+      </button>
+      <div class="clock">15:45</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

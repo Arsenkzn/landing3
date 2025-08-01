@@ -1,0 +1,117 @@
+body.win98-desktop {
+  background-color: #008080;
+  background-image: url("images/desktop_bg.jpg");
+  background-size: cover;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+.win98-window {
+  border: 3px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  background: #c0c0c0;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 800px;
+  min-height: 500px;
+}
+
+.title-bar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  padding: 3px 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-controls button {
+  width: 22px;
+  height: 22px;
+  margin-left: 2px;
+  border: none;
+  background: #c0c0c0;
+  font-family: "MS Sans Serif";
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.window-controls button:hover {
+  background: #a0a0a0;
+}
+
+.win98-button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  padding: 3px 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.win98-button:active {
+  border-color: #404040 #dfdfdf #dfdfdf #404040;
+}
+
+.win98-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+.product-item {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  padding: 10px;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #c0c0c0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #dfdfdf;
+}
+
+.start-button {
+  height: 100%;
+  border: none;
+  background: #c0c0c0;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+.start-button img {
+  margin-right: 5px;
+  height: 30px;
+}
+
+.clock {
+  margin-left: auto;
+  padding: 0 10px;
+}
+
+.desktop-icons {
+  display: grid;
+  gap: 10px;
+}
+
+.icon img {
+  height: 100px;
+  width: 100px;
+}
