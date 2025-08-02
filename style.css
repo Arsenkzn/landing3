@@ -364,6 +364,10 @@ body.win98-desktop {
   background: linear-gradient(90deg, #800000, #d01010) !important;
 }
 
+.img-toolbar {
+  width: 400px;
+}
+
 /* Прогресс-бар установки */
 .progress-bar {
   width: 100%;

@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupNo = document.getElementById("popup-no");
   const popupClose = document.getElementById("popup-close");
 
-  const bgMusic = new Audio("sounds/loopSound.wav");
-  bgMusic.loop = true;
-  bgMusic.volume = 0.1;
+  const bgMusic = new Audio("sounds/start.mp3");
+  bgMusic.loop = false;
+  bgMusic.volume = 0.3;
   let isSoundEnabled = false;
 
   // Активация по первому клику
