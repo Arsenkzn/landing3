@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const windows = document.querySelectorAll(".win98-window");
+
+  windows.forEach((window) => {
+    const titleBar = window.querySelector(".title-bar");
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    titleBar.addEventListener("mousedown", (e) => {
+      if (e.target.closest(".window-controls")) return; // Не перетаскивать при клике на кнопки
+
+      isDragging = true;
+      offsetX = e.clientX - window.getBoundingClientRect().left;
+      offsetY = e.clientY - window.getBoundingClientRect().top;
+
+      window.style.zIndex = 1000; // Поднимаем окно поверх других
+      document.body.style.userSelect = "none"; // Отключаем выделение текста при перетаскивании
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+
+      window.style.left = `${e.clientX - offsetX}px`;
+      window.style.top = `${e.clientY - offsetY}px`;
+      window.style.position = "absolute"; // Меняем позиционирование
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      document.body.style.userSelect = "";
+    });
+  });
   const buyButtons = document.querySelectorAll(".buy-btn");
   const popup = document.getElementById("popup");
   const popupMessage = document.getElementById("popup-message");
