@@ -1,3 +1,92 @@
+.win98-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  overflow-y: auto; /* Включаем вертикальную прокрутку */
+  scrollbar-width: thin; /* Для Firefox */
+  scrollbar-color: #c0c0c0 #f0f0f0;
+}
+
+.win98-products-grid::-webkit-scrollbar {
+  width: 12px;
+}
+
+.win98-product-window {
+  border: 2px solid #000;
+  background: #c0c0c0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title-bar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  padding: 3px 6px;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.product-content {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-image {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: white;
+  border: 1px solid #000;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #000;
+}
+
+.win98-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.win98-popup-window {
+  background: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  width: 300px;
+}
+
+.popup-content {
+  padding: 16px;
+  text-align: center;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
 body.win98-desktop {
   background-color: #008080;
   background-image: url("images/desktop_bg.jpg");
@@ -19,8 +108,8 @@ body.win98-desktop {
   position: absolute;
   top: 50px;
   left: 50px;
-  width: 800px;
-  min-height: 500px;
+  width: 60vw;
+  min-height: 70vh;
 }
 
 .title-bar {
@@ -63,7 +152,7 @@ body.win98-desktop {
 
 .win98-products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   padding: 10px;
 }
@@ -73,6 +162,24 @@ body.win98-desktop {
   border: 2px solid;
   border-color: #dfdfdf #404040 #404040 #dfdfdf;
   padding: 10px;
+}
+
+.product-window {
+  border: 2px solid;
+  border-color: #404040 #dfdfdf #dfdfdf #404040;
+  margin: 10px;
+  width: 200px;
+}
+
+.product-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .taskbar {
@@ -96,6 +203,80 @@ body.win98-desktop {
   font-weight: bold;
 }
 
+.win98-download-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.download-window {
+  background: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  width: 400px;
+}
+
+.download-content {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.download-icon {
+  font-size: 48px;
+  color: #000080;
+}
+
+.download-info {
+  flex: 1;
+}
+
+.download-progress {
+  margin: 12px 0;
+  background: #fff;
+  border: 1px solid #808080;
+  height: 20px;
+  position: relative;
+  box-shadow: inset 1px 1px #0a0a0a;
+}
+
+.progress-bar {
+  background: #000080;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease-out;
+  box-shadow: inset -1px -1px #0a0a0a;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 11px;
+  font-family: "Arial", sans-serif;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.download-details {
+  font-size: 12px;
+}
+
 .start-button img {
   margin-right: 5px;
   height: 30px;
@@ -114,4 +295,79 @@ body.win98-desktop {
 .icon img {
   height: 100px;
   width: 100px;
+}
+
+.win98-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  z-index: 1000;
+  border: 3px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  background: #c0c0c0;
+}
+
+.dialog-content {
+  padding: 15px;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.error-title {
+  background: linear-gradient(90deg, #800000, #d01010) !important;
+}
+
+/* Прогресс-бар установки */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  border: 2px solid;
+  border-color: #404040 #dfdfdf #dfdfdf #404040;
+  margin: 10px 0;
+  background: #fff;
+}
+
+.progress {
+  height: 100%;
+  background: #000080;
+  transition: width 0.3s;
+}
+
+.install-step {
+  display: none;
+}
+
+.install-step.active {
+  display: block;
+}
+
+/* Анимация обновления */
+@keyframes crash {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+.crash-animation {
+  animation: crash 0.5s linear;
+}
+
+.external-btn {
+  width: 45px;
+  height: auto;
+  display: block;
+  cursor: pointer;
 }
