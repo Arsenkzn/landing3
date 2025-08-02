@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MARKET-98 :: Vintage online store</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="img/" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
   </head>
   <body class="win98-desktop">
-    <!-- Рабочий стол Windows 98 -->
+    
     <div class="desktop-icons">
       <div class="icon">
         <img src="img/my_computer.png" alt="" />
+        <span>My Computer</span>
       </div>
       <div class="icon">
         <img src="img/IE.png" alt="" />
+        <span>Internet Explorer</span>
       </div>
     </div>
 
-    <!-- Окно магазина -->
     <div class="window win98-window">
       <div class="title-bar">
         <span class="title-text"
@@ -36,21 +37,254 @@
         <div class="win98-toolbar">
           <button class="win98-button">Home</button>
           <button class="win98-button">Catalog</button>
+          <button class="win98-button" id="refresh-btn">Refresh</button>
           <button class="win98-button">Basket</button>
         </div>
 
         <div class="win98-content">
           <h1>Welcome to MARKET-98!</h1>
-          <p>Your Best Source of 2000s Nostalgia</p>
+<a href="https://x.com" target="_blank" class="external-link">
+            <img src="./img/btnX.png" alt="External Link" class="external-btn" />
+          </a>
+          <p>Your Best Source of 2000s Nostalgia </p>
+</div>
+          <div id="products-grid" class="win98-products-grid">
+            
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Nikia-3310</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/Nokia-3310.png"
+                  alt="Product 1"
+                  class="product-image"
+                />
+                <div class="product-price">19.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
 
-          <!-- Товары будут добавляться через JS -->
-          <div id="products-grid" class="win98-products-grid"></div>
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Motorolla</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/moto.png"
+                  alt="Product 2"
+                  class="product-image"
+                />
+                <div class="product-price">24.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+      
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Sony Walkman</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/SonyWalman.png"
+                  alt="Product 3"
+                  class="product-image"
+                />
+                <div class="product-price">14.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Personal Computer</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/pentium2.png"
+                  alt="Product 4"
+                  class="product-image"
+                />
+                <div class="product-price">59.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Mouse</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/mouse.png"
+                  alt="Product 5"
+                  class="product-image"
+                />
+                <div class="product-price">9.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Game Half-life</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/halfLife.png"
+                  alt="Product 6"
+                  class="product-image"
+                />
+                <div class="product-price">10.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Game Sims</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/sims.png"
+                  alt="Product 7"
+                  class="product-image"
+                />
+                <div class="product-price">12.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Game Quake ||</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/quake2.png"
+                  alt="Product 8"
+                  class="product-image"
+                />
+                <div class="product-price">10.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Game Diablo ||</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/diablo2.png"
+                  alt="Product 9"
+                  class="product-image"
+                />
+                <div class="product-price">10.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Tetris</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/тетрис.png"
+                  alt="Product 10"
+                  class="product-image"
+                />
+                <div class="product-price">14.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Tamagotchi</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/tamagochi.png"
+                  alt="Product 11"
+                  class="product-image"
+                />
+                <div class="product-price">9.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            <div class="win98-product-window">
+              <div class="product-title-bar">
+                <span class="product-title">Beyblade</span>
+              </div>
+              <div class="product-content">
+                <img
+                  src="/img/babylade.png"
+                  alt="Product 13"
+                  class="product-image"
+                />
+                <div class="product-price">15.99 Sol</div>
+                <button class="buy-btn">Buy</button>
+              </div>
+            </div>
+
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="status-bar">
-        <span>Home</span>
-        <span class="status-icon">📶</span>
+    <!-- Поп-ап окно -->
+    <div id="popup" class="win98-popup" style="display: none">
+      <div class="win98-popup-window">
+        <div class="title-bar">
+          <span class="title-text">Confirmation</span>
+          <div class="window-controls">
+            <button class="close" id="popup-close">X</button>
+          </div>
+        </div>
+        <div class="popup-content">
+          <p id="popup-message">Вы уверены, что хотите добавить в корзину?</p>
+          <div class="popup-buttons">
+            <button class="win98-button" id="popup-yes">Yes</button>
+            <button class="win98-button" id="popup-no">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="install-dialog" class="win98-dialog" style="display: none">
+      <div class="title-bar">
+        <span class="title-text">Installation Wizard</span>
+        <div class="window-controls">
+          <button class="close" onclick="cancelInstallation()">X</button>
+        </div>
+      </div>
+      <div class="dialog-content">
+        <div id="install-progress">
+          <div class="install-step" id="step1">
+            <h3>Подготовка</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="install-step" id="step2" style="display: none">
+            <h3>Копирование файлов</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="install-step" id="step3" style="display: none">
+            <h3>Установка завершена</h3>
+            <p>Ваш заказ успешно оформлен!</p>
+            <button class="win98-button" onclick="hideDialog('install-dialog')">
+              Finish
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -62,6 +296,36 @@
       <div class="clock">15:45</div>
     </div>
 
+    <div id="download-dialog" class="win98-download-dialog" style="display: none;">
+  <div class="download-window">
+    <div class="title-bar">
+      <span class="title-text">File Download</span>
+      <div class="window-controls">
+        <button class="close" id="download-close">X</button>
+      </div>
+    </div>
+    <div class="download-content">
+      <div class="download-icon">↓</div>
+      <div class="download-info">
+        <p id="download-filename">Downloading: product.zip</p>
+        <div class="download-progress">
+          <div class="progress-bar" id="download-progress-bar"></div>
+          <span class="progress-text" id="download-progress-text">0%</span>
+        </div>
+        <div class="download-buttons">
+          <button class="win98-button" id="download-open">Open</button>
+          <button class="win98-button" id="download-save">Save</button>
+          <button class="win98-button" id="download-cancel">Cancel</button>
+        </div>
+        <div class="download-details">
+          <label><input type="checkbox" id="download-close-checkbox"> Close this dialog box when download completes</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<audio id="startup-sound" volume="0.5"></audio>
+<audio id="bg-music" loop volume="0.1"></audio>
     <script src="script.js"></script>
   </body>
 </html>
