@@ -37,77 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupNo = document.getElementById("popup-no");
   const popupClose = document.getElementById("popup-close");
 
-  const sounds = {
-    startup: "sounds/start.mp3",
-    main: "sounds/loopSound.wav",
-  };
-
-  console.log("Initializing audio elements...");
-  const startupSound = new Audio();
-  const bgMusic = new Audio();
+  const bgMusic = new Audio("sounds/loopSound.wav");
   bgMusic.loop = true;
+  bgMusic.volume = 0.1;
   let isSoundEnabled = false;
 
-  function initSoundSystem() {
-    console.log("Initializing sound system...");
-
-    // Проверка доступности файлов
-    console.log("Checking sound files availability:");
-    fetch(sounds.startup)
-      .then((r) => console.log(`Startup sound: ${r.ok ? "OK" : "Not found"}`))
-      .catch((e) => console.error("Startup sound check failed:", e));
-
-    fetch(sounds.main)
-      .then((r) => console.log(`BG music: ${r.ok ? "OK" : "Not found"}`))
-      .catch((e) => console.error("BG music check failed:", e));
-
-    startupSound.src = sounds.startup;
-    startupSound.volume = 0.4;
-    bgMusic.src = sounds.main;
-    bgMusic.volume = 0.1;
-  }
-
-  function playStartupSound() {
-    console.log("Attempting to play startup sound...");
-
-    startupSound
-      .play()
-      .then(() => {
-        console.log("Startup sound playing successfully");
-        startupSound.onended = () => {
-          console.log("Startup sound ended, starting background music");
-          bgMusic.play().catch((e) => console.error("BG music error:", e));
-        };
-      })
-      .catch((e) => {
-        console.error("Startup sound play failed:", e.message);
-      });
-  }
-
-  // Активация по первому клику где угодно на странице
+  // Активация по первому клику
   document.addEventListener(
     "click",
-    function firstInteraction() {
+    function initSound() {
       if (!isSoundEnabled) {
-        console.log("First user interaction detected");
-        initSoundSystem();
-        playStartupSound();
+        console.log("Starting background music");
+        bgMusic.play().catch((e) => console.error("Music error:", e));
         isSoundEnabled = true;
-        document.removeEventListener("click", firstInteraction);
+        document.removeEventListener("click", initSound);
       }
     },
     { once: true }
   );
-
-  // Автозапуск с задержкой (если пользователь не кликнул)
-  setTimeout(() => {
-    if (!isSoundEnabled) {
-      console.log("Auto-init after timeout");
-      initSoundSystem();
-      playStartupSound();
-      isSoundEnabled = true;
-    }
-  }, 200);
 
   buyButtons.forEach((button) => {
     button.addEventListener("click", function () {
