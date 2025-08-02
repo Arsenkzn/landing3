@@ -12,6 +12,10 @@
   width: 12px;
 }
 
+.welcome {
+  font-size: 38px;
+}
+
 .win98-product-window {
   border: 2px solid #000;
   background: #c0c0c0;
@@ -110,6 +114,7 @@ body.win98-desktop {
   left: 50px;
   width: 60vw;
   min-height: 70vh;
+  transition: none;
 }
 
 .title-bar {
@@ -120,9 +125,11 @@ body.win98-desktop {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: none;
+  user-select: none;
 }
 
-.window-controls button {
+.window-controls * button {
   width: 22px;
   height: 22px;
   margin-left: 2px;
@@ -130,7 +137,7 @@ body.win98-desktop {
   background: #c0c0c0;
   font-family: "MS Sans Serif";
   font-size: 12px;
-  cursor: pointer;
+  cursor: default;
 }
 
 .window-controls button:hover {
@@ -370,4 +377,11 @@ body.win98-desktop {
   height: auto;
   display: block;
   cursor: pointer;
+}
+
+.head-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
