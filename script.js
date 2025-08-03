@@ -7,14 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let offsetX, offsetY;
 
     titleBar.addEventListener("mousedown", (e) => {
-      if (e.target.closest(".window-controls")) return; // Не перетаскивать при клике на кнопки
-
+      if (e.target.closest(".window-controls")) return;
       isDragging = true;
       offsetX = e.clientX - window.getBoundingClientRect().left;
       offsetY = e.clientY - window.getBoundingClientRect().top;
 
-      window.style.zIndex = 1000; // Поднимаем окно поверх других
-      document.body.style.userSelect = "none"; // Отключаем выделение текста при перетаскивании
+      window.style.zIndex = 1000;
+      document.body.style.userSelect = "none";
     });
 
     document.addEventListener("mousemove", (e) => {
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       window.style.left = `${e.clientX - offsetX}px`;
       window.style.top = `${e.clientY - offsetY}px`;
-      window.style.position = "absolute"; // Меняем позиционирование
+      window.style.position = "absolute";
     });
 
     document.addEventListener("mouseup", () => {
@@ -42,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
   bgMusic.volume = 0.3;
   let isSoundEnabled = false;
 
-  // Активация по первому клику
   document.addEventListener(
     "click",
     function initSound() {
@@ -58,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   buyButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      // Случайное решение - показать сообщение о подтверждении или ошибке
       if (Math.random() > 0.3) {
         popupMessage.textContent = "Are you sure you want to add to cart?";
         popup.style.display = "flex";
@@ -92,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 
-  // Закрытие попапа
   popupYes.addEventListener("click", function () {
     popup.style.display = "none";
     popupYes.style.display = "";
@@ -124,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
       Math.random() * 90 + 10
     )}.zip`;
 
-    // Сброс состояния
     progressBar.style.width = "0%";
     progressText.textContent = "0%";
     document.getElementById("download-open").disabled = true;
@@ -135,29 +130,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dialog.style.display = "flex";
 
-    // Улучшенная анимация прогресса
     let progress = 0;
-    const speeds = [5, 8, 12, 7]; // Разные скорости для реалистичности
+    const speeds = [5, 8, 12, 7];
     let currentSpeed = 0;
 
     function updateProgress() {
-      // Реалистичное поведение с замедлениями/ускорениями
       if (progress > 85 && progress < 95) {
         progress += 0.3; // Замедление в конце
       } else if (progress > 98) {
-        progress += 0.1; // Почти остановка
+        progress += 0.1;
       } else {
         progress += speeds[currentSpeed % speeds.length];
         currentSpeed++;
       }
 
-      // Корректировка значений
       if (progress > 100) progress = 100;
 
       progressBar.style.width = `${progress}%`;
       progressText.textContent = `${Math.round(progress)}%`;
 
-      // Дрожание в середине (как будто что-то загружается)
       if (progress > 45 && progress < 55 && Math.random() > 0.7) {
         progressBar.style.width = `${progress - 2}%`;
         setTimeout(() => {
@@ -166,18 +157,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (progress < 100) {
-        // Случайные паузы для реалистичности
         if (Math.random() > 0.95) {
           setTimeout(updateProgress, 500);
         } else {
           setTimeout(updateProgress, 100 + Math.random() * 100);
         }
       } else {
-        // Завершение
         document.getElementById("download-open").disabled = false;
         document.getElementById("download-save").disabled = false;
 
-        // Мигание при завершении (как в IE)
         let blinkCount = 0;
         const blinkInterval = setInterval(() => {
           progressBar.style.backgroundColor =
@@ -191,12 +179,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Начинаем с небольшой задержки (как будто сервер обрабатывает запрос)
     setTimeout(() => {
       updateProgress();
     }, 1000);
 
-    // Обработчики кнопок (остаются как в предыдущем коде)
     document.getElementById("download-open").onclick = function () {
       alert(
         "This file does not have a program associated with it...\n\nPlease install a program to open this file."
@@ -207,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     document.getElementById("download-save").onclick = function () {
-      // Добавляем звуковой эффект сохранения (если нужно)
       const saveSound = new Audio("sounds/mouse.mp3");
       saveSound.volume = 1;
 

@@ -3,29 +3,28 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   padding: 16px;
-  overflow-y: auto; /* Включаем вертикальную прокрутку */
-  scrollbar-width: thin; /* Для Firefox */
+  overflow-y: auto;
+  scrollbar-width: thin;
   scrollbar-color: #c0c0c0 #f0f0f0;
 }
 .window.win98-window {
   position: absolute;
-  width: 90%; /* или фиксированная ширина, например 800px */
+  width: 90%;
   max-width: 1000px;
-  height: 70vh; /* 70% высоты экрана */
-  max-height: 700px;
+  height: 80vh;
+  max-height: 1000px;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Скрываем всё, что выходит за пределы */
+  overflow: hidden;
 }
 
 .window-content {
   flex: 1;
-  overflow-y: auto; /* Включаем вертикальную прокрутку */
-  scrollbar-width: thin; /* Для Firefox */
-  scrollbar-color: #c0c0c0 #f0f0f0; /* Для Firefox */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 #f0f0f0;
 }
 
-/* Стилизация полосы прокрутки для Chrome/Edge/Safari */
 .window-content::-webkit-scrollbar {
   width: 12px;
 }
